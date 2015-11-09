@@ -1,4 +1,4 @@
-package mail;
+package content;
 
 /**
  * @author DUFLOS Nicolas
@@ -6,5 +6,9 @@ package mail;
  *
  */
 public interface Content {
+	
+	void getDescription();
+	
+	void getAmount();
 
 }
