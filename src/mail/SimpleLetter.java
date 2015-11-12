@@ -3,14 +3,18 @@
  */
 package mail;
 
-import content.Content;
+import content.TextContent;
 
 /**
  * @author DUFLOS Nicolas
  * @author DELASSUS Alexandre
  *
  */
-public class SimpleLetter<TextContent> extends Letter<Content> {
+public class SimpleLetter extends Letter<TextContent> {
+	
+	public SimpleLetter(TextContent c){
+		this.content = c;
+	}
 
 	/* (non-Javadoc)
 	 * @see mail.Letter#doAction()

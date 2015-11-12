@@ -13,10 +13,10 @@ import content.Content;
  */
 public abstract class Letter <C extends Content> {
 
-	private int cost;
-	private Inhabitant sender;
-	private Inhabitant receiver;
-	private C content;
+	protected int cost;
+	protected Inhabitant sender;
+	protected Inhabitant receiver;
+	protected C content;
 	
 	public Letter(){
 		
