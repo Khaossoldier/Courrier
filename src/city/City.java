@@ -36,21 +36,13 @@ public class City {
 		return inhabitant;
 	}
 
-	public void setInhabitant(List<Inhabitant> inhabitant) {
-		this.inhabitant = inhabitant;
-	}
-
 	public List<Letter<?>> getPostbox() {
 		return postbox;
-	}
-
-	public void setPostbox(List<Letter<?>> postbox) {
-		this.postbox = postbox;
 	}
 	
 	public void sendLetter(Letter<?> l){
 		this.getPostbox().add(l);
-		System.out.println(l.getSender() + "mails" + l.description());
+		System.out.println(l.getSender() + " mails " + l.description() + " to " + l.getReceiver() + " for a cost of " + l.getCost() + " euros.");
 	}
 	
 	public void distributeLetter(){
@@ -61,7 +53,7 @@ public class City {
 		
 		for (Letter<?> l : bag){
 			l.getReceiver().receiveLetter(l);
-			System.out.println(l.getSender() + "receives" + l.description());
+			System.out.println(l.getSender() + " receives " + l.description() + " from " + l.getSender());
 		}
 		
 	}
