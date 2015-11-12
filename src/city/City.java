@@ -14,7 +14,7 @@ import mail.Letter;
  */
 public class City {
 
-	private String name;
+	private final String name;
 	private List<Inhabitant> inhabitant;
 	private List<Letter<?>> postbox;
 	
@@ -30,10 +30,6 @@ public class City {
 
 	public String getName() {
 		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public List<Inhabitant> getInhabitant() {
