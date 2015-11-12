@@ -37,7 +37,7 @@ public class Inhabitant {
 		return b;
 	}
 	
-	public void receiveLetter(Letter<Content> l){
+	public void receiveLetter(Letter<?> l){
 		
 	}
 }

@@ -3,14 +3,14 @@
  */
 package mail;
 
-import content.Content;
+import content.LetterContent;
 
 /**
  * @author DUFLOS Nicolas
  * @author DELASSUS Alexandre
  *
  */
-public class RegisterLetter<LetterContent> extends Letter<Content> {
+public class RegisterLetter extends Letter<LetterContent> {
 
 	/* (non-Javadoc)
 	 * @see mail.Letter#doAction()

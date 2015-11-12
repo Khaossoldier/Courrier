@@ -9,9 +9,9 @@ import mail.Letter;
  */
 public class LetterContent implements Content {
 
-	private Letter<Content> letter;
+	private Letter<?> letter;
 	
-	public LetterContent(Letter<Content> l){
+	public LetterContent(Letter<?> l){
 		this.letter = l;
 	}
 	

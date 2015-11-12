@@ -12,8 +12,8 @@ import content.TextContent;
  */
 public class SimpleLetter extends Letter<TextContent> {
 	
-	public SimpleLetter(TextContent c){
-		this.content = c;
+	public SimpleLetter(String s){
+		this.content = new TextContent(s);
 	}
 
 	/* (non-Javadoc)

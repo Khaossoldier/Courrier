@@ -5,8 +5,6 @@ package city;
 
 import java.util.*;
 
-import content.Content;
-
 import mail.Letter;
 
 /**
@@ -18,7 +16,7 @@ public class City {
 
 	private String name;
 	private List<Inhabitant> inhabitant;
-	private List<Letter<Content>> postbox;
+	private List<Letter<?>> postbox;
 	
 	
 	/**
@@ -27,7 +25,7 @@ public class City {
 	public City(String name){
 		this.name = name;
 		this.inhabitant = new ArrayList<Inhabitant>();
-		this.postbox = new ArrayList<Letter<Content>>();
+		this.postbox = new ArrayList<Letter<?>>();
 	}
 
 	public String getName() {
@@ -46,25 +44,25 @@ public class City {
 		this.inhabitant = inhabitant;
 	}
 
-	public List<Letter<Content>> getPostbox() {
+	public List<Letter<?>> getPostbox() {
 		return postbox;
 	}
 
-	public void setPostbox(List<Letter<Content>> postbox) {
+	public void setPostbox(List<Letter<?>> postbox) {
 		this.postbox = postbox;
 	}
 	
-	public void sendLetter(Letter<Content> l){
+	public void sendLetter(Letter<?> l){
 		this.getPostbox().add(l);
 	}
 	
 	public void distributeLetter(){
 		
-		List<Letter<Content>> bag = new LinkedList<Letter<Content>>(this.postbox);
+		List<Letter<?>> bag = new LinkedList<Letter<?>>(this.postbox);
 		
 		this.postbox.clear();
 		
-		for (Letter<Content> l : bag){
+		for (Letter<?> l : bag){
 			l.getReceiver().receiveLetter(l);
 		}
 		

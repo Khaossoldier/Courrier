@@ -18,9 +18,6 @@ public abstract class Letter <C extends Content> {
 	protected Inhabitant receiver;
 	protected C content;
 	
-	public Letter(){
-		
-	}
 	
 	public int getCost(){
 		return this.cost;
