@@ -12,10 +12,19 @@ public class BankAccount {
 	
 	private int amount;
 	
+//	CONSTRUCTOR
+	/**
+	 * Constructor of BankAccount
+	 * Put the amout to 5000
+	 */
+	public BankAccount(){
+		this.amount = 5000;
+	}
 	
 //	SETTERS AND GETTERS
 	/**
 	 * @return the amount
+	 * Getter of amout
 	 */
 	public int getAmount() {
 		return amount;
@@ -23,6 +32,7 @@ public class BankAccount {
 
 	/**
 	 * @param amount the amount to set
+	 * Setter of amout
 	 */
 	public void setAmount(int amount) {
 		this.amount = amount;
@@ -32,6 +42,7 @@ public class BankAccount {
 //	METHODS
 	/**
 	 * @param amount
+	 * Credit cash to the amout
 	 */
 	public void credit(int amount){
 		this.setAmount(this.getAmount() + amount);
@@ -39,6 +50,7 @@ public class BankAccount {
 	
 	/**
 	 * @param amount
+	 * Debit cash to the amout
 	 */
 	public void debit(int amount){
 		this.setAmount(this.getAmount() - amount);

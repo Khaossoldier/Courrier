@@ -1,27 +1,25 @@
-/**
- * 
- */
 package content;
 
+import mail.Letter;
 
 /**
  * @author DUFLOS Nicolas
  * @author DELASSUS Alexandre
  *
  */
-public class TextContent implements Content {
+public class LetterContent implements Content {
 
-	private String text;
+	private Letter<Content> letter;
 	
-	public TextContent(String s){
-		this.text = s;
+	public LetterContent(Letter<Content> l){
+		this.letter = l;
 	}
 	
 	/* (non-Javadoc)
 	 * @see mail.Content#getDescription()
 	 */
 	public String getDescription() {
-		return ("a text content (" + this.text + ")");
+		return this.letter.description();
 
 	}
 
@@ -29,7 +27,7 @@ public class TextContent implements Content {
 	 * @see mail.Content#getAmount()
 	 */
 	public int getAmount() {
-		return 0;
+		return letter.getContent().getAmount();
 
 	}
 

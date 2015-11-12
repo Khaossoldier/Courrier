@@ -12,20 +12,24 @@ package content;
 public class PromissoryContent implements Content {
 	
 	private int amount;
+	
+	public PromissoryContent(int tune){
+		this.amount = tune;
+	}
 
 	/* (non-Javadoc)
 	 * @see mail.Content#getDescription()
 	 */
-	public void getDescription() {
-		// TODO Auto-generated method stub
+	public String getDescription() {
+		return ("a money content (" + this.amount + ")");
 
 	}
 
 	/* (non-Javadoc)
 	 * @see mail.Content#getAmount()
 	 */
-	public void getAmount() {
-		// TODO Auto-generated method stub
+	public int getAmount() {
+		return amount;
 
 	}
 

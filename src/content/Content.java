@@ -7,8 +7,8 @@ package content;
  */
 public interface Content {
 	
-	void getDescription();
+	String getDescription();
 	
-	void getAmount();
+	int getAmount();
 
 }
