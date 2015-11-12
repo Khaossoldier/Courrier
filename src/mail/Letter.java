@@ -26,12 +26,20 @@ public abstract class Letter <C extends Content> {
 		return this.cost;
 	}
 	
+	public Inhabitant getSender(){
+		return this.sender;
+	}
+	
+	public Inhabitant getReceiver(){
+		return this.receiver;
+	}
+	
 	public C getContent(){
 		return this.content;
 	}
 	
 	public void description(){
-		
+		System.out.println("A letter whose content is " + this.getContent());
 	}
 	
 	protected abstract void doAction();

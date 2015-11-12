@@ -14,6 +14,13 @@ public class Inhabitant {
 	private City city;
 	private BankAccount b;
 	
+//	CONSTRUCTOR
+	public Inhabitant(String name, City c, BankAccount b){
+		this.name = name;
+		this.city = c;
+		this.b = b;
+	}
+	
 //	SETTERS AND GETTER
 	public String getName() {
 		return name;
@@ -25,9 +32,7 @@ public class Inhabitant {
 		return b;
 	}
 	
-	public Inhabitant(String name, City c, BankAccount b){
-		this.name = name;
-		this.city = c;
-		this.b = b;
+	public void receiveLetter(Letter<C>){
+		
 	}
 }
