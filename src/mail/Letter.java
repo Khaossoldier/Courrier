@@ -18,6 +18,12 @@ public abstract class Letter <C extends Content> {
 	protected Inhabitant receiver;
 	protected C content;
 	
+	public Letter(int cost, Inhabitant sender, Inhabitant receiver){
+		this.cost = cost;
+		this.sender = sender;
+		this.receiver = receiver;
+	}
+	
 	
 	public int getCost(){
 		return this.cost;
@@ -35,9 +41,7 @@ public abstract class Letter <C extends Content> {
 		return this.content;
 	}
 	
-	public void description(){
-		System.out.println("A letter whose content is " + this.getContent());
-	}
+	public abstract String description();
 	
-	protected abstract void doAction();
+	public abstract void doAction();
 }

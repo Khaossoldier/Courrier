@@ -3,7 +3,6 @@
  */
 package city;
 
-import content.Content;
 import mail.Letter;
 
 /**
@@ -38,6 +37,6 @@ public class Inhabitant {
 	}
 	
 	public void receiveLetter(Letter<?> l){
-		
+		l.doAction();
 	}
 }

@@ -17,6 +17,10 @@ public class TextContent implements Content {
 		this.text = s;
 	}
 	
+	public boolean isThanks(){
+		return this.text.equals("Thank you");
+	}
+	
 	/* (non-Javadoc)
 	 * @see mail.Content#getDescription()
 	 */

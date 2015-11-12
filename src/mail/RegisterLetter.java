@@ -3,6 +3,7 @@
  */
 package mail;
 
+import city.Inhabitant;
 import content.LetterContent;
 
 /**
@@ -12,13 +13,30 @@ import content.LetterContent;
  */
 public class RegisterLetter extends Letter<LetterContent> {
 
+	/**
+	 * @param cost
+	 * @param sender
+	 * @param receiver
+	 */
+	public RegisterLetter(int cost, Inhabitant sender, Inhabitant receiver, LetterContent l) {
+		super(cost, sender, receiver);
+		this.content = l;
+	}
+	
+	public int getCost(){
+		return this.getContent().getLetter().getCost() + 15;
+	}
+	
+	public String description(){
+		return "a registered letter whose content is " + this.getContent().getDescription();
+	}
+
 	/* (non-Javadoc)
 	 * @see mail.Letter#doAction()
 	 */
 	@Override
-	protected void doAction() {
-		// TODO Auto-generated method stub
-		
+	public void doAction() {
+		this.getSender().getB().debit(this.getCost());	
 	}
 
 }

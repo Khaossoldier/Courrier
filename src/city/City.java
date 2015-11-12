@@ -54,6 +54,7 @@ public class City {
 	
 	public void sendLetter(Letter<?> l){
 		this.getPostbox().add(l);
+		System.out.println(l.getSender() + "mails" + l.description());
 	}
 	
 	public void distributeLetter(){
@@ -64,6 +65,7 @@ public class City {
 		
 		for (Letter<?> l : bag){
 			l.getReceiver().receiveLetter(l);
+			System.out.println(l.getSender() + "receives" + l.description());
 		}
 		
 	}

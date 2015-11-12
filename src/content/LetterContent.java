@@ -15,6 +15,10 @@ public class LetterContent implements Content {
 		this.letter = l;
 	}
 	
+	public Letter<?> getLetter(){
+		return this.letter;
+	}
+	
 	/* (non-Javadoc)
 	 * @see mail.Content#getDescription()
 	 */

@@ -3,6 +3,7 @@
  */
 package mail;
 
+import city.Inhabitant;
 import content.TextContent;
 
 /**
@@ -12,7 +13,8 @@ import content.TextContent;
  */
 public class SimpleLetter extends Letter<TextContent> {
 	
-	public SimpleLetter(String s){
+	public SimpleLetter(int cost, Inhabitant sender, Inhabitant receiver, String s) {
+		super(cost, sender, receiver);
 		this.content = new TextContent(s);
 	}
 
@@ -20,9 +22,17 @@ public class SimpleLetter extends Letter<TextContent> {
 	 * @see mail.Letter#doAction()
 	 */
 	@Override
-	protected void doAction() {
-		// TODO Auto-generated method stub
+	public void doAction() {
+		this.getSender().getB().debit(1);
 		
+	}
+
+	public String description(){
+		String s = "";
+		if (this.getContent().isThanks()){
+			s = "a thanks letter which is";
+		}
+		return s + "a simple letter whose content is " + this.getContent().getDescription();
 	}
 
 }
