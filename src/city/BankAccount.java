@@ -29,6 +29,7 @@ public class BankAccount {
 	}
 	
 	
+//	METHODS
 	/**
 	 * @param amount
 	 */

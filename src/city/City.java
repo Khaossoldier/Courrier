@@ -6,6 +6,8 @@ package city;
 import java.util.LinkedList;
 import java.util.List;
 
+import content.Content;
+
 import mail.Letter;
 
 /**
@@ -17,7 +19,7 @@ public class City {
 
 	private String name;
 	private List<Inhabitant> inhabitant;
-	private List<Letter> postbox;
+	private List<Letter<Content>> postbox;
 	
 	
 
@@ -37,11 +39,11 @@ public class City {
 		this.inhabitant = inhabitant;
 	}
 
-	public List<Letter> getPostbox() {
+	public List<Letter<Content>> getPostbox() {
 		return postbox;
 	}
 
-	public void setPostbox(List<Letter> postbox) {
+	public void setPostbox(List<Letter<Content>> postbox) {
 		this.postbox = postbox;
 	}
 	
@@ -54,9 +56,9 @@ public class City {
 	
 	public void distributeLetter(){
 		
-		List<Letter> bag = new LinkedList<Letter>(this.postbox);
+		List<Letter<Content>> bag = new LinkedList<Letter<Content>>(this.postbox);
 		
-		for (Letter l : bag){
+		for (Letter<Content> l : bag){
 			l.getReceiver().receiveLetter(l);
 		}
 		

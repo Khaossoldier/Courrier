@@ -3,6 +3,9 @@
  */
 package city;
 
+import content.Content;
+import mail.Letter;
+
 /**
  * @author DUFLOS Nicolas
  * @author DELASSUS Alexandre
@@ -25,14 +28,16 @@ public class Inhabitant {
 	public String getName() {
 		return name;
 	}
+	
 	public City getCity() {
 		return city;
 	}
+	
 	public BankAccount getB() {
 		return b;
 	}
 	
-	public void receiveLetter(Letter<C>){
+	public void receiveLetter(Letter<Content> l){
 		
 	}
 }
