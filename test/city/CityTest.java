@@ -25,10 +25,10 @@ public class CityTest {
 		this.cb2 = new BankAccount(5000);
 		this.city = new City("Lille");
 		this.monsieur = new Inhabitant("Bob",city,cb1);
-		this.monsieur = new Inhabitant("Mamy",city,cb2);
+		this.madame = new Inhabitant("Mamy",city,cb2);
 		this.city.getInhabitant().add(this.monsieur);
 		this.city.getInhabitant().add(this.madame);
-		this.letter = new SimpleLetter(1,monsieur,madame,"blabla");
+		this.letter = new SimpleLetter(1,monsieur,madame,"blabla", false);
 	}
 	
 	@Test
@@ -43,17 +43,20 @@ public class CityTest {
 
 	@Test
 	public void testGetInhabitant() {
-		assertEquals(this.city.getInhabitant(),(new ArrayList<Inhabitant>()).add(this.monsieur));
+		assertEquals(this.city.getInhabitant().get(0),this.monsieur);
+		assertEquals(this.city.getInhabitant().get(1),this.madame);
+		assertEquals(this.city.getInhabitant().size(),2);
 	}
 	
 	@Test
 	public void testSendLetterAndGetPostbox() {
 		this.city.sendLetter(this.letter);
-		assertEquals(this.city.getPostbox(),(new ArrayList<Letter<?>>().add(this.letter)));
+		assertEquals(this.city.getPostbox().get(0),this.letter);
 	}
 
 	@Test
 	public void testDistributeLetter() {
+		this.city.sendLetter(this.letter);
 		this.city.distributeLetter();
 		assertEquals(this.monsieur.getB().getAmount(),4999);
 		assertTrue(this.city.getPostbox().isEmpty());

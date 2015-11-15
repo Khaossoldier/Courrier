@@ -29,7 +29,7 @@ public class LetterContentTest {
 		this.monsieur = new Inhabitant("Mamy",city,cb2);
 		this.city.getInhabitant().add(this.monsieur);
 		this.city.getInhabitant().add(this.madame);
-		this.letter = new SimpleLetter(1,monsieur,madame,"blabla");
+		this.letter = new SimpleLetter(1,monsieur,madame,"blabla", false);
 		this.letterC = new LetterContent(this.letter);
 	}
 	
@@ -40,17 +40,17 @@ public class LetterContentTest {
 
 	@Test
 	public void testGetLetter() {
-		assertEquals(this.letterC.getLetter(),)
+		assertEquals(this.letterC.getLetter(),this.letter);
 	}
 
 	@Test
 	public void testGetDescription() {
-		fail("Not yet implemented");
+		assertEquals(this.letterC.getDescription(),this.letter.description());
 	}
 
 	@Test
 	public void testGetAmount() {
-		fail("Not yet implemented");
+		assertEquals(this.letterC.getAmount(),this.letter.getContent().getAmount());
 	}
 
 }

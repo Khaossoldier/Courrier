@@ -2,28 +2,36 @@ package content;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class TextContentTest {
 
+	private TextContent textC;
+	
+	@Before
+	public void initialize(){
+		this.textC = new TextContent("Hello World",false);
+	}
+	
 	@Test
 	public void testTextContent() {
-		fail("Not yet implemented");
+		assertNotNull(this.textC);
 	}
 
 	@Test
 	public void testIsThanks() {
-		fail("Not yet implemented");
+		assertFalse(this.textC.isThanks());
 	}
 
 	@Test
 	public void testGetDescription() {
-		fail("Not yet implemented");
+		assertEquals(this.textC.getDescription(), "a text content (" + this.textC.getText() + ")");
 	}
 
 	@Test
 	public void testGetAmount() {
-		fail("Not yet implemented");
+		assertEquals(this.textC.getAmount(),0);
 	}
 
 }
