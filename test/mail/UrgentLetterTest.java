@@ -27,7 +27,7 @@ public class UrgentLetterTest {
 		cb2 = new BankAccount(5000);
 		city = new City("Lille");
 		monsieur = new Inhabitant("Bob",city,cb1);
-		monsieur = new Inhabitant("Mamy",city,cb2);
+		madame = new Inhabitant("Mamy",city,cb2);
 		city.getInhabitant().add(monsieur);
 		city.getInhabitant().add(madame);
 		letter = new SimpleLetter(1,monsieur,madame,"blabla", 0);
@@ -53,6 +53,7 @@ public class UrgentLetterTest {
 	@Test
 	public void testDoAction() {
 		city.sendLetter(urgent);
+		
 		city.distributeLetter();
 		assertEquals(cb1.getAmount(), 4998);
 	}
