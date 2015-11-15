@@ -13,14 +13,14 @@ public class TextContent implements Content {
 
 	private String text;
 	
+	
+//	CONSTRUCTOR
 	public TextContent(String s){
 		this.text = s;
 	}
 	
-	public boolean isThanks(){
-		return this.text.equals("Thank you");
-	}
 	
+//	SETTERS AND GETTERS
 	/* (non-Javadoc)
 	 * @see mail.Content#getDescription()
 	 */
@@ -35,6 +35,16 @@ public class TextContent implements Content {
 	public int getAmount() {
 		return 0;
 
+	}
+	
+	
+//	METHODS
+	/**
+	 * @return <code> true </code> if the the Letter is a thanks letter
+	 * <code> false </code> if it is not
+	 */
+	public boolean isThanks(){
+		return this.text.equals("Thank you");
 	}
 
 }

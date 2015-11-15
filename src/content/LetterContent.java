@@ -11,13 +11,20 @@ public class LetterContent implements Content {
 
 	private Letter<?> letter;
 	
+//	CONSTRUCTOR
 	public LetterContent(Letter<?> l){
 		this.letter = l;
 	}
 	
+	
+//	SETTERS AND GETTERS
+	/**
+	 * @return the Letter which is the content
+	 */
 	public Letter<?> getLetter(){
 		return this.letter;
 	}
+	
 	
 	/* (non-Javadoc)
 	 * @see mail.Content#getDescription()

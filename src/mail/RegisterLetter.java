@@ -13,6 +13,8 @@ import content.LetterContent;
  */
 public class RegisterLetter extends Letter<LetterContent> {
 
+	
+//	CONSTRUCTOR
 	/**
 	 * @param cost
 	 * @param sender
@@ -23,10 +25,20 @@ public class RegisterLetter extends Letter<LetterContent> {
 		this.content = l;
 	}
 	
+	
+//	GETTER
+	/* (non-Javadoc)
+	 * @see mail.Letter#getCost()
+	 */
 	public int getCost(){
 		return this.getContent().getLetter().getCost() + 15;
 	}
 	
+	
+//	METHODS
+	/* (non-Javadoc)
+	 * @see mail.Letter#description()
+	 */
 	public String description(){
 		return "a registered letter whose content is " + this.getContent().getDescription();
 	}

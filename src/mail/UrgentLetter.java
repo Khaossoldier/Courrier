@@ -13,6 +13,8 @@ import content.LetterContent;
  */
 public class UrgentLetter extends Letter<LetterContent> {
 
+	
+//	CONSTRUCTOR
 	/**
 	 * @param cost
 	 * @param sender
@@ -23,10 +25,16 @@ public class UrgentLetter extends Letter<LetterContent> {
 		this.content = l;
 	}
 	
+	
+//	GETTER
 	public int getCost(){
 		return this.getContent().getLetter().getCost() * 2;
 	}
 	
+//	METHODS
+	/* (non-Javadoc)
+	 * @see mail.Letter#description()
+	 */
 	public String description(){
 		return "an urgent letter whose content is " + this.getContent().getDescription();
 	}

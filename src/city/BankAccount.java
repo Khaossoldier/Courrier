@@ -17,8 +17,8 @@ public class BankAccount {
 	 * Constructor of BankAccount
 	 * Put the amout to 5000
 	 */
-	public BankAccount(){
-		this.amount = 5000;
+	public BankAccount(int amount){
+		this.amount = amount;
 	}
 	
 //	SETTERS AND GETTERS

@@ -13,6 +13,7 @@ import content.PromissoryContent;
  */
 public class PromissoryLetter extends Letter<PromissoryContent> {
 
+//	CONSTRUCTOR
 	/**
 	 * @param cost
 	 * @param sender
@@ -21,9 +22,13 @@ public class PromissoryLetter extends Letter<PromissoryContent> {
 	public PromissoryLetter(int cost, Inhabitant sender, Inhabitant receiver, PromissoryContent c) {
 		super(cost, sender, receiver);
 		this.content = c;
-		// TODO Auto-generated constructor stub
 	}
 	
+	
+//	METHODS
+	/* (non-Javadoc)
+	 * @see mail.Letter#description()
+	 */
 	public String description(){
 		return "a promissory note letter whose content is " + this.getContent().getDescription();
 	}

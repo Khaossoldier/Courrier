@@ -13,10 +13,14 @@ public class PromissoryContent implements Content {
 	
 	private int amount;
 	
+	
+//	CONSTRUCTOR
 	public PromissoryContent(int tune){
 		this.amount = tune;
 	}
 
+	
+//	SETTERS AND GETTERS
 	/* (non-Javadoc)
 	 * @see mail.Content#getDescription()
 	 */

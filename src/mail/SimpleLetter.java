@@ -13,6 +13,8 @@ import content.TextContent;
  */
 public class SimpleLetter extends Letter<TextContent> {
 	
+	
+//	CONSTRUCTOR
 	public SimpleLetter(int cost, Inhabitant sender, Inhabitant receiver, String s) {
 		super(cost, sender, receiver);
 		this.content = new TextContent(s);
@@ -27,6 +29,9 @@ public class SimpleLetter extends Letter<TextContent> {
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see mail.Letter#description()
+	 */
 	public String description(){
 		String s = "";
 		if (this.getContent().isThanks()){
