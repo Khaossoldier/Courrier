@@ -13,7 +13,7 @@ public class InhabitantTest {
 	
 	@Before
 	public void initialize(){
-		this.cb = new BankAccount();
+		this.cb = new BankAccount(5000);
 		this.city = new City("Lille");
 		this.monsieur = new Inhabitant("Bob",city,cb);
 	}
@@ -36,11 +36,6 @@ public class InhabitantTest {
 	@Test
 	public void testGetB() {
 		assertEquals(monsieur.getB(), cb);
-	}
-
-	@Test
-	public void testReceiveLetter() {
-		fail("Not yet implemented");
 	}
 
 }

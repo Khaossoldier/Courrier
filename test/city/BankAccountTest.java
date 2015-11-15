@@ -11,7 +11,7 @@ public class BankAccountTest {
 	
 	@Before
 	public void initialize(){
-		this.cb = new BankAccount();
+		this.cb = new BankAccount(5000);
 	}
 	
 	@Test

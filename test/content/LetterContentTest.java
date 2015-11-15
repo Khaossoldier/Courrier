@@ -1,16 +1,16 @@
-package city;
+package content;
 
 import static org.junit.Assert.*;
-
-import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import mail.Letter;
+import city.BankAccount;
+import city.City;
+import city.Inhabitant;
 import mail.SimpleLetter;
 
-public class CityTest {
+public class LetterContentTest {
 
 	private Inhabitant monsieur;
 	private Inhabitant madame;
@@ -18,6 +18,7 @@ public class CityTest {
 	private BankAccount cb1;
 	private BankAccount cb2;
 	private SimpleLetter letter;
+	private LetterContent letterC;
 	
 	@Before
 	public void initialize(){
@@ -29,34 +30,27 @@ public class CityTest {
 		this.city.getInhabitant().add(this.monsieur);
 		this.city.getInhabitant().add(this.madame);
 		this.letter = new SimpleLetter(1,monsieur,madame,"blabla");
+		this.letterC = new LetterContent(this.letter);
 	}
 	
 	@Test
-	public void testCity() {
-		assertNotNull(this.city);
+	public void testLetterContent() {
+		assertNotNull(this.letterC);
 	}
 
 	@Test
-	public void testGetName() {
-		assertEquals(this.city.getName(),"Lille");
+	public void testGetLetter() {
+		assertEquals(this.letterC.getLetter(),)
 	}
 
 	@Test
-	public void testGetInhabitant() {
-		assertEquals(this.city.getInhabitant(),(new ArrayList<Inhabitant>()).add(this.monsieur));
-	}
-	
-	@Test
-	public void testSendLetterAndGetPostbox() {
-		this.city.sendLetter(this.letter);
-		assertEquals(this.city.getPostbox(),(new ArrayList<Letter<?>>().add(this.letter)));
+	public void testGetDescription() {
+		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testDistributeLetter() {
-		this.city.distributeLetter();
-		assertEquals(this.monsieur.getB().getAmount(),4999);
-		assertTrue(this.city.getPostbox().isEmpty());
+	public void testGetAmount() {
+		fail("Not yet implemented");
 	}
 
 }
