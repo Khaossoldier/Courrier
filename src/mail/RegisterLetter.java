@@ -48,7 +48,9 @@ public class RegisterLetter extends Letter<LetterContent> {
 	 */
 	@Override
 	public void doAction() {		
+		this.content.getLetter().doAction();
 		sender.getCity().sendLetter(new SimpleLetter(0, this.getReceiver(), this.getSender(), "aknowledgment of receipt for  " + this.description(), 2));
+		
 	}
 
 }

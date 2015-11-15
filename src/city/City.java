@@ -62,6 +62,14 @@ public class City {
 	public void sendLetter(Letter<?> l){
 		this.getPostbox().add(l);
 		l.getSender().getB().debit(l.getCost());
+		switch(l.getCost()){
+		case 0: System.out.println("-> " + l.getSender().getName() + " mails " + l.description() + " to " + l.getReceiver().getName());
+				break;
+		case 1: System.out.println("-> " + l.getSender().getName() + " mails " + l.description() + " to " + l.getReceiver().getName() + " for a cost of " + l.getCost() + " euro");
+				break;
+		default: System.out.println("-> " + l.getSender().getName() + " mails " + l.description() + " to " + l.getReceiver().getName() + " for a cost of " + l.getCost() + " euros");
+				break;
+		}
 		l.printDebit(l.getSender(), l.getCost());
 	}
 	
@@ -75,8 +83,8 @@ public class City {
 		this.postbox.clear();
 		
 		for (Letter<?> l : bag){
+			System.out.println("<- " + l.getReceiver().getName() + " receives " + l.description() + " from " + l.getSender().getName());
 			l.getReceiver().receiveLetter(l);
-			System.out.println("<- " + l.getSender() + " receives " + l.description() + " from " + l.getSender());
 		}
 		
 	}
