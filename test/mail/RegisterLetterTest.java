@@ -29,7 +29,9 @@ public class RegisterLetterTest {
 		c = new City("Lille");
 		monsieur = new Inhabitant("Bob", c, b1);
 		madame = new Inhabitant("Gertrude", c, b2);
-		content = new LetterContent(new SimpleLetter(1, monsieur, madame, "text", false));
+		c.getInhabitant().add(this.monsieur);
+		c.getInhabitant().add(this.madame);
+		content = new LetterContent(new SimpleLetter(1, monsieur, madame, "text", 0));
 		l = new RegisterLetter(cost, monsieur, madame, content);
 	}
 	
@@ -45,7 +47,8 @@ public class RegisterLetterTest {
 
 	@Test
 	public void testDoAction() {
-		l.doAction();
+		c.sendLetter(l);
+		c.distributeLetter();
 		assertEquals(b1.getAmount(), 4984);
 	}
 

@@ -25,7 +25,7 @@ public class CityTest {
 		this.madame = new Inhabitant("Mamy",city,cb2);
 		this.city.getInhabitant().add(this.monsieur);
 		this.city.getInhabitant().add(this.madame);
-		this.letter = new SimpleLetter(1,monsieur,madame,"blabla", false);
+		this.letter = new SimpleLetter(1,monsieur,madame,"blabla", 0);
 	}
 	
 	@Test

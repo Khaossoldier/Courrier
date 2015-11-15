@@ -44,8 +44,7 @@ public class UrgentLetter extends Letter<LetterContent> {
 	 */
 	@Override
 	public void doAction() {
-		this.getSender().getB().debit(this.getCost());
-		
+		this.getContent().getLetter().doAction();
 	}
 
 }

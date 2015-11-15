@@ -46,6 +46,7 @@ public class BankAccount {
 	 */
 	public void credit(int amount){
 		this.setAmount(this.getAmount() + amount);
+
 	}
 	
 	/**

@@ -30,8 +30,11 @@ public class PromissoryLetterTest {
 		c = new City("Lille");
 		monsieur = new Inhabitant("Bob", c, b1);
 		madame = new Inhabitant("Gertrude", c, b2);
+		this.c.getInhabitant().add(this.monsieur);
+		this.c.getInhabitant().add(this.madame);
 		content = new PromissoryContent(25);
 		l = new PromissoryLetter(cost, monsieur, madame, content);
+		
 	}
 	
 	@Test
@@ -41,9 +44,10 @@ public class PromissoryLetterTest {
 
 	@Test
 	public void testDoAction() {
-		l.doAction();
+		c.sendLetter(l);
+		c.distributeLetter();
 		assertEquals(b1.getAmount(), 4974);
-		assertEquals(b2.getAmount(), 5025);
+		assertEquals(b2.getAmount(), 5024);
 	}
 
 	@Test

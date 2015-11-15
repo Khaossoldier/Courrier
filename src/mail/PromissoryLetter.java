@@ -24,7 +24,6 @@ public class PromissoryLetter extends Letter<PromissoryContent> {
 		this.content = c;
 	}
 	
-	
 //	METHODS
 	/* (non-Javadoc)
 	 * @see mail.Letter#description()
@@ -42,10 +41,12 @@ public class PromissoryLetter extends Letter<PromissoryContent> {
 		Inhabitant receiver = this.getReceiver();
 		
 		//Credit et debit des comptes en banque
-		sender.getB().debit(1 + this.getContent().getAmount());
+		sender.getB().debit(this.getContent().getAmount());
+		this.printDebit(this.getSender(), this.getContent().getAmount());
 		receiver.getB().credit(this.getContent().getAmount());
+		this.printCredit(this.getReceiver(), this.getContent().getAmount());
 		
-		sender.getCity().sendLetter(new SimpleLetter(1, this.getReceiver(), this.getSender(), "thanks for " + this.description(), true));
+		sender.getCity().sendLetter(new SimpleLetter(1, this.getReceiver(), this.getSender(), "thanks for " + this.description(), 1));
 		
 	}
 

@@ -64,4 +64,22 @@ public abstract class Letter <C extends Content> {
 	 * Triggers the action to achieve depending on the type of the letter
 	 */
 	public abstract void doAction();
+
+	public void printCredit(Inhabitant i,int cash){
+		if(cash == 1){
+			System.out.println("   + " + i.getName() + " account is credited with " + cash + " euro; its balance is now " + i.getB().getAmount() + " euros");
+		}
+		else if(cash > 1){
+			System.out.println("   + " + i.getName() + " account is credited with " + cash + " euros; its balance is now " + i.getB().getAmount() + " euros");
+		}
+	}
+	
+	public void printDebit(Inhabitant i,int cash){
+		if(cash == 1){
+			System.out.println("   - " + cash + " euro is debited from " + i.getName() + " account whose balance is now " + i.getB().getAmount() + " euros");
+		}
+		else if(cash > 1){
+			System.out.println("   - " + cash + " euros are debited from " + i.getName() + " account whose balance is now " + i.getB().getAmount() + " euros");
+		}
+	}
 }

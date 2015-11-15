@@ -12,12 +12,18 @@ package content;
 public class TextContent implements Content {
 
 	private String text;
-	private boolean thank;
+	private int mode;
 	
 //	CONSTRUCTOR
-	public TextContent(String s, boolean thank){
+	/**
+	 * @param s
+	 * @param mode
+	 * Constructor of TextContent
+	 * Mode define if it's a simplelettre (0), a thankletter (1) or a aknowledgment of receipt (2)
+	 */
+	public TextContent(String s, int mode){
 		this.text = s;
-		this.thank = thank;
+		this.mode = mode;
 	}
 	
 	
@@ -51,7 +57,15 @@ public class TextContent implements Content {
 	 * <code> false </code> if it is not
 	 */
 	public boolean isThanks(){
-		return this.thank;
+		return this.mode == 1;
+	}
+	
+	/**
+	 * @return <code> true </code> if the the Letter is a aknowledgment of receipt
+	 * <code> false </code> if it is not
+	 */
+	public boolean isAknowledgment(){
+		return this.mode == 2;
 	}
 
 }

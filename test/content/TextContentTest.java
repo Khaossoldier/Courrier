@@ -11,7 +11,7 @@ public class TextContentTest {
 	
 	@Before
 	public void initialize(){
-		this.textC = new TextContent("Hello World",false);
+		this.textC = new TextContent("Hello World",0);
 	}
 	
 	@Test

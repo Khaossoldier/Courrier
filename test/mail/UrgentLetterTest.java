@@ -23,37 +23,38 @@ public class UrgentLetterTest {
 	
 	@Before
 	public void initialize(){
-		this.cb1 = new BankAccount(5000);
-		this.cb2 = new BankAccount(5000);
-		this.city = new City("Lille");
-		this.monsieur = new Inhabitant("Bob",city,cb1);
-		this.monsieur = new Inhabitant("Mamy",city,cb2);
-		this.city.getInhabitant().add(this.monsieur);
-		this.city.getInhabitant().add(this.madame);
-		this.letter = new SimpleLetter(1,monsieur,madame,"blabla", false);
-		this.letterC = new LetterContent(this.letter);
-		this.urgent = new UrgentLetter(0, monsieur, madame, this.letterC);
+		cb1 = new BankAccount(5000);
+		cb2 = new BankAccount(5000);
+		city = new City("Lille");
+		monsieur = new Inhabitant("Bob",city,cb1);
+		monsieur = new Inhabitant("Mamy",city,cb2);
+		city.getInhabitant().add(monsieur);
+		city.getInhabitant().add(madame);
+		letter = new SimpleLetter(1,monsieur,madame,"blabla", 0);
+		letterC = new LetterContent(this.letter);
+		urgent = new UrgentLetter(0, monsieur, madame, letterC);
 	}
 	
 	@Test
 	public void testUrgentLetter() {
-		assertNotNull(this.urgent);
+		assertNotNull(urgent);
 	}
 	
 	@Test
 	public void testGetCost() {
-		assertEquals(this.urgent.getCost(), 2);
+		assertEquals(urgent.getCost(), 2);
 	}
 
 	@Test
 	public void testDescription() {
-		assertEquals(this.urgent.description(), "an urgent letter whose content is " + this.urgent.getContent().getDescription());
+		assertEquals(urgent.description(), "an urgent letter whose content is " + this.urgent.getContent().getDescription());
 	}
 
 	@Test
 	public void testDoAction() {
-		urgent.doAction();
-		assertEquals(this.monsieur.getB().getAmount(), 4998);
+		city.sendLetter(urgent);
+		city.distributeLetter();
+		assertEquals(cb1.getAmount(), 4998);
 	}
 
 }
