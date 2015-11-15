@@ -65,6 +65,11 @@ public abstract class Letter <C extends Content> {
 	 */
 	public abstract void doAction();
 
+	/**
+	 * @param i
+	 * @param cash
+	 * display a line with the credit of the bank account of the inhabitant i
+	 */
 	public void printCredit(Inhabitant i,int cash){
 		if(cash == 1){
 			System.out.println("   + " + i.getName() + " account is credited with " + cash + " euro; its balance is now " + i.getB().getAmount() + " euros");
@@ -74,6 +79,11 @@ public abstract class Letter <C extends Content> {
 		}
 	}
 	
+	/**
+	 * @param i
+	 * @param cash
+	 * display a line with the debot of the bank account of the inhabitant i
+	 */
 	public void printDebit(Inhabitant i,int cash){
 		if(cash == 1){
 			System.out.println("   - " + cash + " euro is debited from " + i.getName() + " account whose balance is now " + i.getB().getAmount() + " euros");

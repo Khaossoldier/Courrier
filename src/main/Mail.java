@@ -18,15 +18,8 @@ import content.*;
 public class Mail {
 	private City c;
 	private List<Inhabitant> inhabitants;
-	
-	public City getCity() {
-		return c;
-	}
 
-	public List<Inhabitant> getInhabitants() {
-		return inhabitants;
-	}
-
+//	CONSTRUCTOR
 	public Mail(){
 		c = new City("Lille");
 		inhabitants = new ArrayList<Inhabitant>();
@@ -35,6 +28,24 @@ public class Mail {
 		}
 	}
 	
+	/**
+	 * @return the city
+	 */
+	public City getCity() {
+		return c;
+	}
+
+	/**
+	 * @return the list of the inhabitants
+	 */
+	public List<Inhabitant> getInhabitants() {
+		return inhabitants;
+	}
+	
+	/**
+	 * @param type
+	 * @return a letter of a random type
+	 */
 	public Letter<?> createLetter(int type){
 		int sender = (int) (Math.random() * (99));
 		int receiver = (int) (Math.random() * (99));
