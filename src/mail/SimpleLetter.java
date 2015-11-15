@@ -15,9 +15,9 @@ public class SimpleLetter extends Letter<TextContent> {
 	
 	
 //	CONSTRUCTOR
-	public SimpleLetter(int cost, Inhabitant sender, Inhabitant receiver, String s) {
+	public SimpleLetter(int cost, Inhabitant sender, Inhabitant receiver, String s, boolean thank) {
 		super(cost, sender, receiver);
-		this.content = new TextContent(s);
+		this.content = new TextContent(s, thank);
 	}
 
 	/* (non-Javadoc)

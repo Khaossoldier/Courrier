@@ -45,7 +45,7 @@ public class PromissoryLetter extends Letter<PromissoryContent> {
 		sender.getB().debit(1 + this.getContent().getAmount());
 		receiver.getB().credit(this.getContent().getAmount());
 		
-		sender.getCity().sendLetter(new SimpleLetter(1, this.getReceiver(), this.getSender(), "Thank you"));
+		sender.getCity().sendLetter(new SimpleLetter(1, this.getReceiver(), this.getSender(), "thanks for " + this.description(), true));
 		
 	}
 

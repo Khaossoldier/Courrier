@@ -12,11 +12,12 @@ package content;
 public class TextContent implements Content {
 
 	private String text;
-	
+	private boolean thank;
 	
 //	CONSTRUCTOR
-	public TextContent(String s){
+	public TextContent(String s, boolean thank){
 		this.text = s;
+		this.thank = thank;
 	}
 	
 	
@@ -37,14 +38,20 @@ public class TextContent implements Content {
 
 	}
 	
+	/**
+	 * @return the text
+	 * Getter of text
+	 */
+	public String getText(){
+		return this.text;
+	}
 	
-//	METHODS
 	/**
 	 * @return <code> true </code> if the the Letter is a thanks letter
 	 * <code> false </code> if it is not
 	 */
 	public boolean isThanks(){
-		return this.text.equals("Thank you");
+		return this.thank;
 	}
 
 }
